@@ -1,0 +1,9 @@
+<div class="item-event" [class.current]="current">
+  <span class="date">{{date}}</span>
+  <div class="event-content">
+    <h4>{{title}}</h4>
+    <h5>{{name}}</h5>
+    <ng-content></ng-content>
+  </div>
+  <span *ngIf="date2" class="date2">{{date2}}</span>
+</div>

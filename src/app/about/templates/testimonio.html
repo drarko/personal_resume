@@ -1,0 +1,23 @@
+<div *ngIf="loaded" class="col-md-6">
+  <h3 class="title with-icon"><i class="fa fa-comments-o icn-title"></i> GET /recommendations</h3>
+  <div class="box-block">
+    <div id="testimonial-slider" class="carousel slide" data-ride="carousel" data-interval="false">
+      <div class="carousel-inner">
+        <div class="item active">
+          <div class="box-testimonial">
+            <div class="oComment">
+              <h5>{{getRec().author}}</h5>
+              <p>{{getRec().text}}</p>
+              <div class="text-right date-post"></div>
+            </div>
+            <img class="img-responsive img-profile" src="{{getRec().avatar}}" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="control-testi-slider">
+        <a href="" (click)="$event.preventDefault();prevRec()"><i class="fa fa-chevron-left"></i></a>
+        <a href="" (click)="$event.preventDefault();nextRec()"><i class="fa fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>

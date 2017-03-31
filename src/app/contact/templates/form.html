@@ -1,0 +1,39 @@
+                    <h3 class="title with-icon"><span class="glyphicon glyphicon-send icn-title"></span> smtp.send($form) </h3>
+
+                    <div *ngIf="message" class="alert" [ngClass]="getClass()">{{message}}</div>
+                    
+                    <form *ngIf="!submitted" id="contact-form" name="contact-form" (ngSubmit)="onSubmit()" #contactForm="ngForm">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="FullnameForm">Nombre y Apellido</label>
+                            <input class="form-control" [(ngModel)]="contact.fullname" id="FullnameForm" placeholder="Escribe tu nombre" name="fullname" type="text" required>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="CompanyForm">Empresa</label>
+                            <input class="form-control" [(ngModel)]="contact.company" name="company" id="CompanyForm" placeholder="Escribe tu empresa" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="EmailForm">Correo Electrónico</label>
+                            <input class="form-control" [(ngModel)]="contact.email" name="email" id="EmailForm" placeholder="Escribe tu correo electrónico" type="email" required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$">
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label for="PhoneForm">Teléfono</label>
+                            <input class="form-control" [(ngModel)]="contact.phone" name="phone" id="PhoneForm" placeholder="Escribe tu teléfono" type="text">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label for="MesageForm">Mensaje</label>
+                        <textarea class="form-control" rows="8" [(ngModel)]="contact.message" name="message" id="MesageForm" placeholder="Escribe tu mensaje" required></textarea>
+                      </div>
+                      <button type="submit" [disabled]="!contactForm.form.valid" class="btn btn-flat btn-lg"><span class="glyphicon glyphicon-send"></span> Send</button>
+                    </form>

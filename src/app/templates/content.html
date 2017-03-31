@@ -1,0 +1,17 @@
+<section class="content" id="main-content">
+	<nav id='navigation'>
+		<ul class="navigation-list clearfix list-unstyled">
+			<li routerLinkActive="active"><a routerLink="/about"><i class="icon-user"></i> <span>Sobre Mí</span></a></li>
+			<li routerLinkActive="active"><a routerLink="/resume"><i class="icon-newspaper"></i>  <span>Experiencia</span></a></li>
+			<li routerLinkActive="active"><a routerLink="/knowledge"><i class="icon-pencil"></i> <span >Conocimientos</span></a></li>
+			<li routerLinkActive="active"><a routerLink="/portfolio"><i class="icon-folder-open"></i> <span>Portfolio</span></a></li>
+			<li routerLinkActive="active"><a routerLink="/contact"><i class="icon-mail"></i> <span>Contacto</span></a></li>
+		</ul>
+	</nav>
+
+	<div class="tab-content">
+		<router-outlet></router-outlet>
+	</div>
+	<button type="button" class="btn" id="backtotop" (click)="toTop()"><i class="fa fa-arrow-up"></i></button>
+	<div class="bg-line"></div>
+ </section>
