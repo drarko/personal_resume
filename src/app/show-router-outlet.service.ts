@@ -1,7 +1,8 @@
 import { Injectable }    from '@angular/core';
+import { CanActivate } from '@angular/router';
 
 @Injectable()
-export class ShowRouterOutlet {
+export class ShowRouterOutlet implements CanActivate {
 
     public show: boolean;
 
@@ -9,11 +10,11 @@ export class ShowRouterOutlet {
         this.show = false;
     }
 
-    public getShow() : boolean {
+    public getShow(): boolean {
         return this.show;
     }
 
-    public guard() : boolean {
+    public canActivate(): boolean {
         return this.show;
     }
 
